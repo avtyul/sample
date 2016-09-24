@@ -1,37 +1,3 @@
-exports.post = {
-  "tags": ["user"],
-  "description": "Метод создания пользователя",
-
-  "parameters": [
-    {
-      "name": "email",
-      "description": "Логин пользователя",
-      "type": "string"
-    },
-    {
-      "name": "login",
-      "description": "Логин пользователя",
-      "type": "string"
-    },
-    {
-      "name": "password",
-      "description": "Пароль пользователя",
-      "type": "string"
-    }
-  ],
-
-  "responses": {
-    "200": {
-      "description": "Id сессии",
-      "schema": {
-        "$ref": "#/definitions/Session"
-      }
-    },
-    "403": {
-      "description": "Ошибка при выполнении запроса"
-    }
-  }
-};
 exports.get = {
   "tags": ["user"],
   "description": "Метод получения информации о пользователе",
@@ -48,10 +14,10 @@ exports.get = {
 
   "responses": {
     "200": {
-      "description": "Информация о пользователе",
       "schema": {
         "$ref": "#/definitions/User"
-      }
+      },
+      "description": "Информация о пользователе"
     },
     "401": {
       "description": "Ошибка при выполнении запроса"
@@ -70,14 +36,32 @@ exports.put = {
       "in": "path",
       "required": true
     },
+    {
+      "name": "email",
+      "description": "Логин пользователя",
+      "type": "string",
+      "format": "email"
+    },
+    {
+      "name": "login",
+      "description": "Логин пользователя",
+      "type": "string",
+      "format": "login"
+    },
+    {
+      "name": "password",
+      "description": "Пароль пользователя",
+      "type": "string",
+      "format": "password"
+    }
   ],
 
   "responses": {
     "200": {
-      "description": "Id  сессии",
       "schema": {
         "$ref": "#/definitions/Session"
-      }
+      },
+      "description": "Id  сессии"
     },
     "403": {
       "description": "Ошибка при выполнении запроса"

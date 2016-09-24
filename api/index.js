@@ -12,7 +12,8 @@ module.exports = {
 	paths: {
 		'/messages': require('./resources/messages'),
 		'/session': require('./resources/session'),
-		'/user': require('./resources/user'),
+		'/user': require('./resources/newuser'),
+		'/user/:id': require('./resources/user')
 	},
 
 	definitions: {

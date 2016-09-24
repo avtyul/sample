@@ -15,6 +15,25 @@ app.use('/libs', express.static('node_modules'));
 app.get('/api/session', (req, res) => {
 	res.send(technoDoc.mock(require('./api/scheme/Session')))
 });
+app.post('/api/session', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/Session')))
+});
+app.delete('/api/session', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/Ok')))
+});
+
+app.post('/api/user', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/Session')))
+});
+app.get('/api/user/:id', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/User')))
+});
+app.put('/api/user/:id', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/Session')))
+});
+app.delete('/api/user/:id', (req, res) => {
+	res.send(technoDoc.mock(require('./api/scheme/Ok')))
+});
 
 
 app.post('/api/messages', (req, res) => {

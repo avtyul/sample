@@ -11,6 +11,7 @@ module.exports =  {
     "email": {
       "description": "Email пользователя",
       "type": "string",
+      "format": "email",
       "minLength": 6,
       "maxLength": 50
     },
@@ -19,14 +20,8 @@ module.exports =  {
       "type": "string",
       "minLength": 1,
       "maxLength": 50
-    },
-    "password": {
-      "description": "Пароль пользователя",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 50
-    },
+    }
   },
 
-  "required": ["id", "email", "login", "password"]
+  "required": ["id", "email", "login"]
 };
